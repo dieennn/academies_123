@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+main {
+   scroll-behavior: smooth;
+   padding: 20px;
+   overflow: auto;
+}
+
+nav a {
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+   color: white;
+}
+
+nav a:hover {
+   font-weight: bold;
+}
+
+nav li {
+   display: inline;
+   list-style-type: none;
+   margin-right: 20px;
+}
+
+nav {
+   background-color: #00a2c6;
+   padding: 5px;
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+
+h2 {
+	color: #00a2c6
+}
+
+h3 {
+	color: #00a2c6
+}
+
+header {
+   display: inline;
+}
+
+footer {
+   padding: 20px;
+   color: white;
+   background-color: #00a2c6;
+   text-align: center;
+   font-weight: bold;
+}
+
+.profile header {
+   text-align: center;
+}
+
+.featured-image {
+   border-radius: 10px;
+   width: 100%;
+   max-height: 300px;
+   object-fit: cover;
+   object-position: center;
+
+   -webkit-transform:scale(0.9); /*Webkit: Scale down image to 0.9x original size*/
+   -moz-transform:scale(0.9); /*Mozilla scale version*/
+   -o-transform:scale(0.9); /*Opera scale version*/
+   -webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+   -moz-transition-duration: 0.5s; /*Mozilla duration version*/
+   -o-transition-duration: 0.5s; /*Opera duration version*/
+   opacity: 0.9; /*initial opacity of images*/
+   margin: 0 10px 5px 0; /*margin between images*/
+}
+
+.featured-image:hover {
+   -webkit-transform:scale(1); /*Webkit: Scale up image to 1.2x original size*/
+   -moz-transform:scale(1); /*Mozilla scale version*/
+   -o-transform:scale(1); /*Opera scale version*/
+   box-shadow:0px 0px 30px gray; /*CSS3 shadow: 30px blurred shadow all around image*/
+   -webkit-box-shadow:0px 0px 30px gray; /*Safari shadow version*/
+   -moz-box-shadow:0px 0px 30px gray; /*Mozilla shadow version*/
+   opacity: 1;
+   cursor: pointer;
+}
+
+.profile img {
+   min-width: 100px;
+   max-width: 200px;
+}
+
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.jumbotron {
+   font-size: 20px;
+   padding: 60px;
+   background-color: #00c8eb;
+   text-align: center;
+   color: white;
+}
+
+#content {
+   float: left;
+   width: 75%;
+}
+
+aside {
+   float: right;
+   width: 25%;
+   padding-left: 20px;
+}
+
+/* Pixel 2XL */
+@media screen and (max-width: 1000px) {
+   #content,
+   aside {
+       width: 100%;
+       padding: 0;
+   }
+}
+
+table {
+   text-align: left;
+}
