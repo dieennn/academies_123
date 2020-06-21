@@ -5,27 +5,30 @@
 	<meta charset='utf-8'>
 	<title>Kabupaten Blora</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="assets/image/favicon.png" rel="SHORTCUT ICON" />
+	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-	<header>
+	<header id="home">
 		<div class="jumbotron">
-			<h1>Blora</h1>
-			<p>Blora (Hanacaraka:ꦏꦧꦸꦥꦠꦺꦤ꧀​ꦧ꧀ꦭꦺꦴꦫ, bahasa Jawa: Kabupatèn Blora) adalah kabupaten di Provinsi Jawa Tengah.</p>
+			<div class="ctr">
+				<h1>Blora</h1>
+				<p>Blora (Hanacaraka:ꦏꦧꦸꦥꦠꦺꦤ꧀​ꦧ꧀ꦭꦺꦴꦫ, bahasa Jawa: Kabupatèn Blora) adalah kabupaten di Provinsi Jawa Tengah.</p>
+			</div>
 		</div>
 		<nav id="nav_bar">
 			<ul>
+				<li><a data-target="home">Home</a></li>
 				<li><a data-target="sejarah">Sejarah</a></li>
 				<li><a data-target="geografis">Geografis</a></li>
 				<li><a data-target="wisata">Wisata</a></li>
-				<!-- <li><a href="#sejarah">Sejarah</a></li>
-				<li><a href="#geografis">Geografis</a></li>
-				<li><a href="#wisata">Wisata</a></li> -->
+				<li id="profile" onclick="login()"><a class="login" data-target="">Login</a></li>
 			</ul>
 		</nav>
 	</header>
-	<main>
+	<main id="main">
 		<div id="content">
 			<article id="sejarah" class="card">
 				<h2>Sejarah</h2>
@@ -62,20 +65,41 @@
 				<h2>Wisata</h2>
 				<p>Tempat wisata di Kabupaten Blora:</p>
 					<section>
-						<h3>1. Goa Terawang Blora</h3>
+						<div class="judul-wisata">
+							<div>
+								<h3>1. Goa Terawang Blora</h3>
+							</div>
+							<div>
+							<span class="shake-little shake-freeze 0" onmouseover="overStyle(this)" onmouseout="outStyle(this)">🤍</span>
+							</div>
+						</div>
 						<img src="assets/image/goa-terawang-blora.jpg" class="featured-image" alt="Goa Terawang">
 						<p>Seperti halnya pacitan, blora juga ternyata mempunyai wisata alam goa yang tak kalah indahnya. Yaitu goa terwanag yang berolakasi di daerah jalan yang menghubungkan Todanan – Blora , Kec Todanan, Blora.</p>
 						<p>Jika anda mencari goa terawang, goa ini bisa anda temukan di hutan jati yang di kelola oleh perhutani setempat. Kawsan wisata ini mempunyai luas sekitar 13 hektar dengan satu gua utama yang berukuran besar, 5 goa mungil dan juga satu sendang. Wisata alam goa terawang blora mempunyai pemandangan yang indah untuk anda jadikan objek foto yang menarik.</p>
 						<p>Selain ini di kawasan wisata ini sudah di bangun taman bermain untuk anak anak. Oleh karena itu tempat ini cocok sebagai wisata keluarga di kabupaten blora.</p>
 					</section>
 					<section>
-						<h3>2. Waduk Bentolo</h3>
+						<div class="judul-wisata">
+							<div>
+								<h3>2. Waduk Bentolo </h3>
+							</div>
+							<div>
+								<span class="shake-little shake-freeze 1" onmouseover="overStyle(this)" onmouseout="outStyle(this)">🤍</span>
+							</div>
+						</div>
 						<img src="assets/image/bentolo.jpg" class="featured-image" alt="Waduk Bentolo">
 						<p>Wisata alam blora selanjutnya adalah waduk bentolo yang berlokasi di kecamatan Todanan, Lokasi waduk ini tidak jauh dari gua terawang. jadi setalah anda berkunjung ke goa terawang anda bisa melanjutkan kegiatan berwisata ke wisata air waduk bentolo.</p>
 						<p>Waduk bentolo ini sebenarnya berfungsi sebagai area penampungan air yang di gunakan sebagai penyuplai air di sawah atau kebun penduduk, tapi karena tempatnya yang indah dan nyaman, waduk ini pun sekaligus di jadikan tempat wisata yang menarik.</p>
 					</section>
 					<section>
-						<h3>3. Waduk Tempuran</h3>
+						<div class="judul-wisata">
+							<div>
+								<h3>3. Waduk Tempuran</h3>
+							</div>
+							<div>
+								<span class="shake-little shake-freeze 2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">🤍</span>
+							</div>
+						</div>
 						<img src="assets/image/waduk-tempuran-blora.jpg" class="featured-image" alt="Waduk Tempuran">
 						<p>Selain mempunyai waduk bentolo yang sangat menarik untuk di kujungi, blora juga memiliki waduk tempuran yang tak kalah indahnya. Waduk tempuran ini berlokasi di desa tempuran Kec Blora, Kab Blora. Waduk ini mempunyai luas sekiatar 4600 hektar. luas banget ya, seperti di waduk wadaslintang wonosobo.</p>
 						<p>Wisata air ini juga ternyata menjadi favorit tujuan wisata masayarakat lokal dan juga kabupaten tetangga seperti Grobogan, pati dan juga kudus. Apalagi jikalau liburan telah tiba, wisatwan dari lokal maupun luar kota yang berbondong bondong datang ke tempat ini.</p>
@@ -84,65 +108,57 @@
 			</article>
 		</div>
 
-		<div class="stick">
-			<aside>
-				<article class="profile card">
-					<header>
-						<h2>About Me :</h2>
-						<figure>
-							<img src="assets/image/Logo_Kabupaten_Blora.png" alt="Profile">
-						</figure>
-					</header>
-					<section>
-						<table>
-							<tr>
-								<th>First Name</th>
-								<td>Dien 🙄</td>
-							</tr>
-							<tr>
-								<th>Districts</th>
-								<td>Sleman 📍</td>
-							</tr>
-							<tr>
-								<th>DOB</th>
-								<td>—</td>
-							</tr>
-							<tr>
-								<th>Gender</th>
-								<td>Male 👦</td>
-							</tr>
-							<tr>
-								<th>Hobby</th>
-								<td>Sleep 😴</td>
-							</tr>
-						</table>
-					</section>
-				</article>
-			</aside>
-		</div>
+		<aside>
+			<article class="profile card">
+				<header>
+					<h2>About Me :</h2>
+					<figure>
+						<img src="assets/image/Logo_Kabupaten_Blora.png" alt="Profile">
+					</figure>
+				</header>
+				<section>
+					<table>
+						<tr>
+							<th>First Name</th>
+							<td>Dien 🙄</td>
+						</tr>
+						<tr>
+							<th>Districts</th>
+							<td>Sleman 📍</td>
+						</tr>
+						<tr>
+							<th>DOB</th>
+							<td>—</td>
+						</tr>
+						<tr>
+							<th>Gender</th>
+							<td>Male 👦</td>
+						</tr>
+						<tr>
+							<th>Hobby</th>
+							<td>Sleep 😴</td>
+						</tr>
+					</table>
+				</section>
+			</article>
+		</aside>
 	</main>
+	<div class="dt-profile" id="dt-profile">
+		<div class="card">
+			<p>Hi <strong>Dien</strong>, Selamat sore!</p>
+			<h3>Tempat wisata yang kamu sukai:</h3>
+			<p>1. Goa Terawang Blora</p>
+			<p>2. Waduk Bentolo</p>
+			<p>3. Waduk Tempuran</p>
+		</div>
+	</div>
 
 	<footer>
 		<p>Submission ["Belajar Dasar Pemrograman Web"] &#169; 2020, Dien</p>
 	</footer>
 
-<script>
-//window.onload = function(){ 
-const liElements = document.getElementById('nav_bar').children[0].children;
-for(key in liElements)
-{
-	let d = liElements[key].firstChild
-    d.onclick =
-    function yourFunction(ev){
-		var element = ev.target || ev.srcElement;
-		var targetSection = element.getAttribute('data-target');
-
-		window.scrollTo(0, document.getElementById(targetSection).offsetTop-75);
-		if (ev.target.classList.contains('data-target')) scrollAnchors(e, targetSection);
-	};
-}
-//};
-</script>
+	<script src="assets/js/store.js"></script>
+	<script src="assets/js/config.js"></script>
 </body>
 
 </html>
