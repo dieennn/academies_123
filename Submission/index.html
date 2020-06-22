@@ -145,11 +145,34 @@
 	</main>
 	<div class="dt-profile" id="dt-profile">
 		<div class="card">
-			<p>Hi <strong>Dien</strong>, Selamat sore!</p>
-			<h3>Tempat wisata yang kamu sukai:</h3>
-			<p>1. Goa Terawang Blora</p>
-			<p>2. Waduk Bentolo</p>
-			<p>3. Waduk Tempuran</p>
+			<div class="pg-profil">
+				<div>
+					<p>Hi <strong>Dien</strong>, Selamat sore!</p>
+					<div id="like-ada" style="display: none;">
+						<h3>Tempat wisata yang kamu sukai:</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>ID</th>
+									<th>Judul</th>
+									<th>Created At</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody id="likeList">
+
+							</tbody>
+						</table>
+					</div>
+					<div id="like-tdk" style="display: none;">
+						<h3>kamu belum memiliki wisata yang disukai</h3>
+					</div>
+				</div>
+				<div>
+					<h3 class="btn" onclick="keluar()">Keluar </h3>
+				</div>
+			</div>
 		</div>
 	</div>
 

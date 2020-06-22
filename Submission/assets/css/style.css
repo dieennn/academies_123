@@ -168,10 +168,29 @@ table {
    padding: 0 1rem;
  }
 
+.pg-profil {
+   display: flex;
+   justify-content: space-between;
+   align-items: top;
+   padding: 0 1rem;
+ }
+
+ .btn {
+	cursor: pointer; 
+	background-color: #f74734;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	color: white;
+ }
+
+.btn:hover {
+	background-color: #ff1900;
+	box-shadow: 0px 0px 15px #ff1900;
+}
 
 .shake-little {
    color: transparent;
-   /* text-shadow: 0 0 0 grey; */
+   text-shadow: 0 0 0 grey;
    user-select: none;
    cursor: pointer;
 	display: inline-block;
@@ -184,7 +203,7 @@ table {
 
 .shake-freeze:hover {
    color: transparent;
-   /* text-shadow: 0 0 0 red; */
+   text-shadow: 0 0 0 red;
 	animation-play-state: running
 }
 
@@ -349,3 +368,29 @@ table {
 	animation-iteration-count: infinite
 }
 
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+   width: 100%;
+   border: 1px solid #ddd;
+}
+
+th {
+   text-align: center;
+   padding: 16px;
+}
+
+th {
+   background-color: #00c8eb;
+   color: white;
+}
+
+td {
+	padding: 16px;
+	text-align: left;	
+}
+
+tr:nth-child(even) {
+	text-align: left;
+   background-color: #d2d2d2;
+}

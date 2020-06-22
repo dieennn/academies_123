@@ -6,11 +6,12 @@ var w = window,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
 
 function t() {
-    let dt = localStorage.length
-    if(dt !== 0) {
+    let dt = localStorage.getItem("login")
+    if(dt !== null) {
         let login = "Hi, " + localStorage.getItem("login") + "!";
         document.getElementsByClassName("login")[0].innerHTML = login;
-        if(localStorage.getItem(CACHE_KEY) !== null) {
+        if(JSON.parse(localStorage.getItem(CACHE_KEY)).length !== 0) {
+            document.getElementById("like-ada").style.display = "block";
             let wisata = JSON.parse(localStorage.getItem(CACHE_KEY));
             console.log(wisata)
             const suka = document.getElementsByClassName('judul-wisata');
@@ -30,10 +31,12 @@ function t() {
                         //click.style.backgroundColor = 'green'
                     }
                 }
-                console.log(click)
+                //console.log(click)
             }
         } else {
-            console.log("favorit kosong")             
+            localStorage.removeItem(CACHE_KEY); 
+            console.log("favorit kosong")
+            document.getElementById("like-tdk").style.display = "block";            
         }
     }
 	var yy = y-60;
@@ -90,8 +93,8 @@ for(let i = 0; i< nav_click.length; i++)
 
 //login
 function login() {
-    let dt = localStorage.length
-    if(dt !== 0) {
+    let dt = localStorage.getItem("login")
+    if(dt !== null) {
         console.log("isi")
         var x = document.getElementsByClassName("login")[0];
         if (x.innerHTML !== "Kembali") {
@@ -143,3 +146,24 @@ function store_login(data) {
     }
     //console.log(object.style.textShadow)
  }
+
+/**
+ * * Keluar
+ */
+function keluar() {
+    let d = localStorage.removeItem("login");
+    location.reload();
+}
+
+/**
+ * * Hapus Favorite Profil
+ */
+
+function hplike(id) {
+    let like = showLike();
+    let dtlike = like.filter(function( a ) {
+        return a.id !== id;
+    });
+    localStorage.setItem(CACHE_KEY, JSON.stringify(dtlike));
+    location.reload();
+}
