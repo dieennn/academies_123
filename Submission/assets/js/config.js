@@ -8,12 +8,18 @@ var w = window,
 function t() {
     let dt = localStorage.getItem("login")
     if(dt !== null) {
+        document.getElementById("nama").innerText = localStorage.getItem("login")
+        if(localStorage.getItem(CACHE_KEY) !== null) {
+            if(JSON.parse(localStorage.getItem(CACHE_KEY)).length === 0) {
+                localStorage.removeItem(CACHE_KEY);
+            }
+        }
         let login = "Hi, " + localStorage.getItem("login") + "!";
         document.getElementsByClassName("login")[0].innerHTML = login;
-        if(JSON.parse(localStorage.getItem(CACHE_KEY)).length !== 0) {
+        if(localStorage.getItem(CACHE_KEY) !== null) {
             document.getElementById("like-ada").style.display = "block";
             let wisata = JSON.parse(localStorage.getItem(CACHE_KEY));
-            console.log(wisata)
+            //console.log(wisata)
             const suka = document.getElementsByClassName('judul-wisata');
             for(let a = 0; a< suka.length; a++) {
                 let click = suka[a].children[1].children[0];
@@ -21,14 +27,12 @@ function t() {
                     //console.log(wisata[i].id)
                     //console.log(wisata[i].id)
                     if(wisata[i].id === a) {
-                        /* if(click.style.textShadow !== "red 0px 0px 0px") {
-                        } */
-                        click.style.textShadow = 'red 0px 0px 0px'
-                        click.style.backgroundColor = 'red'
-                        //click.style.backgroundColor = 'red'
-                    } else {
-                        click.style.textShadow = 'grey 0px 0px 0px'
-                        //click.style.backgroundColor = 'green'
+                        console.log(click.className);
+                        console.log(click.classList.remove('shake-little'));
+                        console.log(click.classList.remove('shake-freeze'));
+                        console.log(click.classList.add('shake-littlee'));
+                        console.log(click.classList.add('shake-freezee'));
+                        console.log(click.className);
                     }
                 }
                 //console.log(click)
@@ -58,9 +62,10 @@ for(let i = 0; i< suka.length; i++)
         if(localStorage.getItem("login") !== null) {
             var date = new Date();
             var n = date.toJSON();
+            let judul = judul_text.innerText.substr(2)
             const like = {
                 id: i,
-                judul: judul_text.innerText,
+                judul: judul,
                 created: n,
             }
             alert(like.judul)
@@ -82,9 +87,10 @@ for(let i = 0; i< nav_click.length; i++)
     function yourFunction(ev){
 		var element = ev.target || ev.srcElement;
 		var targetSection = element.getAttribute('data-target');
-
-		window.scrollTo(0, document.getElementById(targetSection).offsetTop-75);
-		if (ev.target.classList.contains('data-target')) scrollAnchors(e, targetSection);
+        if(targetSection != 'profile') {
+            window.scrollTo(0, document.getElementById(targetSection).offsetTop-75);
+            if (ev.target.classList.contains('data-target')) scrollAnchors(e, targetSection);
+        }
 	};
 }
 //};
@@ -124,16 +130,22 @@ function login() {
 
 function store_login(data) {
     const CACHE_KEY = "login";
-    localStorage.setItem(CACHE_KEY, data);
+    let d = data.replace(/([^a-zA-Z])/g, "");
+    if(d != '') {
+        let e = d.substr(0, 7);
+        localStorage.setItem(CACHE_KEY, e);
+    } else {
+        alert("pastikan hanya alphabet")
+    }
 }
 
  /** Change the style **/
  function overStyle(object){
      if(object.style.textShadow === "red 0px 0px 0px") {
          object.style.textShadow = '0 0 0 grey';
-    } else {
+    }/*  else {
         object.style.textShadow = '0 0 0 red';
-    }
+    } */
     //console.log(object.style.textShadow)
  }
 
@@ -141,9 +153,9 @@ function store_login(data) {
  function outStyle(object){
     if(object.style.textShadow === "grey 0px 0px 0px") {
         object.style.textShadow = '0 0 0 red';
-    } else {
+    }/*  else {
         object.style.textShadow = '0 0 0 grey';
-    }
+    } */
     //console.log(object.style.textShadow)
  }
 

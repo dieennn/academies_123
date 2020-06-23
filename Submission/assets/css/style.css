@@ -207,6 +207,25 @@ table {
 	animation-play-state: running
 }
 
+.shake-littlee {
+   color: transparent;
+   text-shadow: 0 0 0 red;
+   user-select: none;
+   cursor: pointer;
+	display: inline-block;
+	transform-origin: center center
+}
+
+.shake-freezee {
+	animation-play-state: paused
+}
+
+.shake-freezee:hover {
+   color: transparent;
+   text-shadow: 0 0 0 grey;
+	animation-play-state: running
+}
+
 @keyframes shake-little {
 	2% {
 		transform: translate(1px, 0px) rotate(.5deg)
@@ -362,6 +381,13 @@ table {
 }
 
 .shake-little.shake-freeze {
+	animation-name: shake-little;
+	animation-duration: 100ms;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite
+}
+
+.shake-littlee.shake-freezee {
 	animation-name: shake-little;
 	animation-duration: 100ms;
 	animation-timing-function: ease-in-out;
